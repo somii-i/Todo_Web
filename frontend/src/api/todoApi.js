@@ -1,5 +1,6 @@
-// Base URL for the Spring Boot backend
-const BASE_URL = 'http://localhost:8080/api/todos';
+// Base URL for the Spring Boot backend, reading from Vite's env vars
+// It defaults to localhost if the env var is missing for local development
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api/todos';
 
 /**
  * Fetch all To-Do items from the backend.
